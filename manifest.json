@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "ثبت مشاهده‌های کلاس اسکای‌روم",
+  "version": "1.0.0",
+  "description": "ثبت محلی نام‌های قابل مشاهده در vc.sharif.edu برای مرور و خروجی CSV.",
+  "permissions": ["storage", "alarms", "activeTab", "scripting"],
+  "host_permissions": ["https://vc.sharif.edu/*"],
+  "content_scripts": [{
+    "matches": ["https://vc.sharif.edu/*"],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }],
+  "background": {"service_worker": "background.js"},
+  "action": {"default_title": "ثبت مشاهده‌های اسکای‌روم", "default_popup": "popup.html"}
+}
